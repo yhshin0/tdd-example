@@ -1,4 +1,3 @@
-import { fail } from 'assert';
 import { Account } from './account';
 
 function testAccount() {
@@ -7,19 +6,13 @@ function testAccount() {
 
 function testGetBalance() {
   let account = new Account(10000);
-  if (account.getBalance() !== 10000) {
-    fail(`getBalnce() => ${account.getBalance()}`);
-  }
+  expect(account.getBalance()).toEqual(10000);
 
   account = new Account(1000);
-  if (account.getBalance() !== 1000) {
-    fail('it should not reach here');
-  }
+  expect(account.getBalance()).toEqual(1000);
 
   account = new Account(0);
-  if (account.getBalance() !== 0) {
-    fail('it should not reach here');
-  }
+  expect(account.getBalance()).toEqual(0);
 }
 
 describe('test', () => {
