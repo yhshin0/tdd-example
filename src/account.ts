@@ -8,11 +8,11 @@ export class Account {
     return this.balance;
   }
 
-  deposit(arg0: number) {
-    this.balance += arg0;
+  deposit(money: number) {
+    this.balance += money;
   }
 
-  withdraw(arg0: number) {
-    this.balance -= arg0;
+  withdraw(money: number) {
+    this.balance -= money;
   }
 }

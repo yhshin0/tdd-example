@@ -1,11 +1,14 @@
 import { Account } from './account';
 
-function testAccount() {
-  const account = new Account(10000);
+let account;
+
+function setUp() {
+  account = new Account(10000);
 }
 
+function testAccount() {}
+
 function testGetBalance() {
-  let account = new Account(10000);
   expect(account.getBalance()).toEqual(10000);
 
   account = new Account(1000);
@@ -16,25 +19,22 @@ function testGetBalance() {
 }
 
 function testDeposit() {
-  const account = new Account(10000);
   account.deposit(1000);
   expect(account.getBalance()).toEqual(11000);
 }
 
 function testWithdraw() {
-  const account = new Account(10000);
   account.withdraw(1000);
   expect(account.getBalance()).toEqual(9000);
 }
 
 describe('test', () => {
+  beforeEach(() => {
+    setUp();
+  });
+
   it('계좌 생성에 성공한다', () => {
-    try {
-      testAccount();
-    } catch (error) {
-      console.log(error.message);
-    }
-    console.log('성공');
+    testAccount();
   });
 
   it('에치 금액이 있는 계좌 생성에 성공한다', () => {
