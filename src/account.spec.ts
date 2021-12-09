@@ -1,3 +1,5 @@
+import { Account } from './account';
+
 function testAccount() {
   const account = new Account();
   if (account === null) {
@@ -6,5 +8,11 @@ function testAccount() {
 }
 
 (function main() {
-  testAccount();
+  try {
+    testAccount();
+  } catch (error) {
+    console.log('실패');
+    return;
+  }
+  console.log('성공');
 })();
