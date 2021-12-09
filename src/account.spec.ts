@@ -6,9 +6,19 @@ function testAccount() {
 }
 
 function testGetBalance() {
-  const account = new Account(10000);
+  let account = new Account(10000);
   if (account.getBalance() !== 10000) {
-    fail();
+    fail(`getBalnce() => ${account.getBalance()}`);
+  }
+
+  account = new Account(1000);
+  if (account.getBalance() !== 1000) {
+    fail('it should not reach here');
+  }
+
+  account = new Account(0);
+  if (account.getBalance() !== 0) {
+    fail('it should not reach here');
   }
 }
 

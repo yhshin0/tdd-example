@@ -1,7 +1,10 @@
 export class Account {
-  constructor(i: number) {}
+  balance: number;
+  constructor(i: number) {
+    this.balance = i;
+  }
 
   getBalance() {
-    return 0;
+    return this.balance;
   }
 }
